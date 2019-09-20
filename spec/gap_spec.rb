@@ -1,11 +1,15 @@
 require 'gap'
 
 describe "primes Gap" do
-    it "returns 1" do
+    it "returns 1, 2 for 1 , 2 integer inputs" do
         expect(gap(1,1,2)).to eq([1, 2])
     end
 
-    it "returns 1" do
+    it "returns nil for gap larger than difference between input integers" do
         expect(gap(2,1,2)).to eq([nil])
+    end
+
+    it "returns 5, 7" do
+        expect(gap(2,5,7)).to eq([5,7])
     end
 end
