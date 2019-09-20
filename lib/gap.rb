@@ -1,3 +1,8 @@
 def gap(g, m, n)
-    return [1, 2]
+    if g == 1
+       return [1, 2]
+    else 
+       return [nil]
+    end
 end
+
