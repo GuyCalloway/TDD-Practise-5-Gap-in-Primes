@@ -1,8 +1,6 @@
 def gap(g, m, n)
     if g > n - m
-        return nil
-    elsif n - m == 1
-        return [1, 2]     
+        return nil    
     else
        gap_1(g, m, n)
     end
@@ -17,7 +15,7 @@ def prime_check(num)
 def gap_1(g, m, n)
     x = m
     arr_primes = []
-    
+
     until x == n + 1
         if prime_check(x)
             arr_primes << x
@@ -30,5 +28,6 @@ def gap_1(g, m, n)
         end
         x += 1
     end
+    
     return nil
 end
