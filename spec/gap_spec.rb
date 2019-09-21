@@ -20,4 +20,9 @@ describe "primes Gap" do
     it "returns nil" do
         expect(gap(2,4,6)).to eq([nil])
     end
+
+    it "returns 337, 437" do
+        expect(gap(10,300,400)).to eq([337, 347])
+    end
+
 end
