@@ -14,7 +14,7 @@ describe "primes Gap" do
     end
 
     it "returns 11, 17" do
-        expect(gap(6,11,20)).to eq([11,17])
+        expect(gap(6,11,20)).to eq([nil])
     end
 
     it "returns nil" do
@@ -23,6 +23,10 @@ describe "primes Gap" do
 
     it "returns 337, 437" do
         expect(gap(10,300,400)).to eq([337, 347])
+    end
+
+    it "returns nil" do
+        expect(gap(6,100,110)).to eq([nil])
     end
 
 end

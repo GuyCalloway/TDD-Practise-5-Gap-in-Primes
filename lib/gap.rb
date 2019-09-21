@@ -6,16 +6,13 @@ def gap(g, m, n)
     else 
        array_of_primes = consecutive_primes(m, n)
        j = 1 
-       until j > array_of_primes.length
-         result = gap_check(array_of_primes, g, j)
-         if result.length == 2
-            return result
-         end
-         j += 1
+      
+       result = gap_check(array_of_primes, g, j)
+        if result.length == 2
+          return result
+        else 
+            return [nil]
         end
-    if result == []
-        return [nil]
-    end
   end
 end
 
