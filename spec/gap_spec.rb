@@ -29,4 +29,8 @@ describe "primes Gap" do
         expect(gap(6,100,110)).to eq([nil])
     end
 
+    it "returns nil" do
+        expect(gap(8,300,400)).to eq([359, 367])
+    end
+
 end

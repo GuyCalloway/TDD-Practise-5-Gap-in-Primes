@@ -5,9 +5,7 @@ def gap(g, m, n)
         return [nil]
     else 
        array_of_primes = consecutive_primes(m, n)
-       j = 1 
-      
-       result = gap_check(array_of_primes, g, j)
+       result = gap_check(array_of_primes, g)
         if result.length == 2
           return result
         else 
@@ -16,13 +14,13 @@ def gap(g, m, n)
   end
 end
 
-def gap_check(array, gap, j)
+def gap_check(array, gap, prime_spacing = 1)
     result = []
     array.each_with_index {|x, i| 
-                                  if array[i + j] == nil
+                                  if array[i + prime_spacing] == nil
                                     break
-                                  elsif array[i + j] - x == gap
-                                    result = [x, array[i + j]]
+                                  elsif array[i + prime_spacing] - x == gap
+                                    result = [x, array[i + prime_spacing]]
                                     break
                                   end                  
                           }
