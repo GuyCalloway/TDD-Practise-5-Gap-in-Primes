@@ -6,7 +6,7 @@ describe "primes Gap" do
     end
 
     it "returns nil for gap larger than difference between input integers" do
-        expect(gap(2,1,2)).to eq([nil])
+        expect(gap(2,1,2)).to eq(nil)
     end
 
     it "returns 5, 7" do
@@ -14,11 +14,11 @@ describe "primes Gap" do
     end
 
     it "returns 11, 17" do
-        expect(gap(6,11,20)).to eq([nil])
+        expect(gap(6,11,20)).to eq(nil)
     end
 
     it "returns nil" do
-        expect(gap(2,4,6)).to eq([nil])
+        expect(gap(2,4,6)).to eq(nil)
     end
 
     it "returns 337, 437" do
@@ -26,10 +26,10 @@ describe "primes Gap" do
     end
 
     it "returns nil" do
-        expect(gap(6,100,110)).to eq([nil])
+        expect(gap(6,100,110)).to eq(nil)
     end
 
-    it "returns nil" do
+    it "returns 8 gap" do
         expect(gap(8,300,400)).to eq([359, 367])
     end
 

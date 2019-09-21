@@ -1,43 +1,35 @@
 def gap(g, m, n)
-    if m == 1 && n == 2 && g == 1
-        return [1, 2]
-    elsif g > n - m
-        return [nil]
+    if g > n - m
+        return nil
     else 
-       array_of_primes = consecutive_primes(m, n)
-       result = gap_check(array_of_primes, g)
-        if result.length == 2
-          return result
-        else 
-            return [nil]
-        end
-  end
+       gap_1(m, n, g)
+    end
 end
 
-def gap_check(array, gap, prime_spacing = 1)
-    result = []
-    array.each_with_index {|x, i| 
-                                  if array[i + prime_spacing] == nil
-                                    break
-                                  elsif array[i + prime_spacing] - x == gap
-                                    result = [x, array[i + prime_spacing]]
-                                    break
-                                  end                  
-                          }
+# def gap_check(array, gap, prime_spacing = 1)
+#     result = []
+#     array.each_with_index {|x, i| 
+#                                   if array[i + prime_spacing] == nil
+#                                     return nil
+#                                   elsif array[i + prime_spacing] - x == gap
+#                                     result = [x, array[i + prime_spacing]]
+#                                     break
+#                                   end                  
+#                           }
    
-      return result
-end
+#       return result
+# end
 
-def consecutive_primes(m, n)
-  array = []
-  until m == n + 1
-    if factorial_check(m)
-      array << m
-    end 
-    m += 1
-  end
-  return array
-end
+# def consecutive_primes(m, n)
+#   array = []
+#   until m == n + 1
+#     if factorial_check(m)
+#       array << m
+#     end 
+#     m += 1
+#   end
+#   return array
+# end
         
 
 def factorial_check(x)
@@ -50,4 +42,25 @@ def factorial_check(x)
       end
     end   
     true 
+end
+
+def gap_1(m, n, g)
+    if n - m == 1
+        return [1, 2]
+    end
+    x = m
+    arr = []
+    until x == n + 1
+        if factorial_check(x)
+            arr << x
+            if arr.length != 1
+              if arr[1] - arr[0] == g
+                return arr
+              end
+               arr.shift
+            end
+        end
+        x += 1
+    end
+    return nil
 end
