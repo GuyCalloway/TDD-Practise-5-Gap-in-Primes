@@ -30,7 +30,9 @@ describe "primes Gap" do
     end
 
     it "returns 8 gap" do
-        expect(gap(8,300,400)).to eq([359, 367])
+        
+        expect(gap(11,30000,100000)).to eq(nil)
+        
     end
 
 end
