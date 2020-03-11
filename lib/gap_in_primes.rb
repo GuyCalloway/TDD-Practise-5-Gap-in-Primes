@@ -1,11 +1,6 @@
 def gap_in_primes(g, m, n)
-  if g > n - m
-      return nil    
-  else
-     find_primes(g, m, n)
-  end
+  g > n - m ? nil : find_primes(g, m, n)
 end
-
 
 def prime_check(num)
   return num if num <= 1
@@ -15,7 +10,6 @@ end
 def find_primes(g, m, n)
   num = m
   array_of_primes = []
-
   until num == n + 1
       if prime_check(num)
           array_of_primes << num
@@ -28,6 +22,5 @@ def find_primes(g, m, n)
       end
       num += 1
   end
-  
   return nil
 end
