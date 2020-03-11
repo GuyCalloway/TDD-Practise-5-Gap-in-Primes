@@ -2,11 +2,6 @@ def gap_in_primes(g, m, n)
   g > n - m ? nil : find_primes(g, m, n)
 end
 
-def prime_check(num)
-  return num if num <= 1
-  (2..Math.sqrt(num)).none? { |i| (num % i).zero? }
-end
-
 def find_primes(g, m, n)
   num = m
   array_of_primes = []
@@ -23,4 +18,9 @@ def find_primes(g, m, n)
       num += 1
   end
   return nil
+end
+
+def prime_check(num)
+  return num if num <= 1
+  (2..Math.sqrt(num)).none? { |i| (num % i).zero? }
 end
