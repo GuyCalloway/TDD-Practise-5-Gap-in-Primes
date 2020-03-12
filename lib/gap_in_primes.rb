@@ -5,7 +5,7 @@ end
 def find_primes(gap, start_val, end_val)
   num = start_val
   array_of_primes = []
-  until num == end_val + 1
+  until num > end_val
       if prime_check(num)
           array_of_primes << num
           if array_of_primes.length != 1
